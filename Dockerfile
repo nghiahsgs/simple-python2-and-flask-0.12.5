@@ -14,7 +14,7 @@ RUN pip install --trusted-host pypi.python.org -r requirements.txt
 ENV FLASK_APP app.py
 
 # Expose port 5000 for Flask app
-EXPOSE 5000
+EXPOSE 5003
 
-# Define the command to run the Flask app when the container starts
-CMD ["flask", "run", "--host=0.0.0.0"]
+# Define the command to run the Flask app when the container starts, auto reload
+CMD ["flask", "run", "--host=0.0.0.0", "--port=5003", "--reload"]
